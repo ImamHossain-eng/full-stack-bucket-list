@@ -50,7 +50,7 @@ router.delete('/:id', async (req, res) => {
     const { id } = req.params;
 
     try {
-        const removed = await BucketItemList.findByIdAndDelete(id);
+        const removed = await BucketListItem.findByIdAndDelete(id);
         if(!removed) throw new Error('Something went wrong while deleting the BucketItem');
         res.status(200).json(removed)
     } catch (error) {
