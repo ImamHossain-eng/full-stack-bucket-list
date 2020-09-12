@@ -25,9 +25,11 @@ router.post('/', async(req, res) => {
     try {
         const bucketListItem = newBucketListItem.save();
         if(!bucketListItem) throw new Error('Something went wrong while saving the Bucketlist');
-        res.status(200).json(bucketListItem) 
+        res.status(200).json(bucketListItem)
+        // res.redirect('/').json(bucketListItem)  
     } catch (error) {
-        res.status(500).json({ message:error.message });         
+        res.status(500).json({ message:error.message });  
+          
     }
 });
 
